@@ -1,0 +1,389 @@
+:root {
+  --ink: #242325;
+  --muted: #656269;
+  --line: #dedbd7;
+  --paper: #ffffff;
+  --accent: #800000;
+  --accent-dark: #5e0000;
+  --max-width: 1120px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-size: 17px;
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  color: var(--accent);
+  text-underline-offset: 0.18em;
+  text-decoration-thickness: 1px;
+}
+
+a:hover,
+a:focus-visible {
+  color: var(--accent-dark);
+  text-decoration-thickness: 2px;
+}
+
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  border-bottom: 1px solid rgba(222, 219, 215, 0.9);
+  background: rgba(255, 255, 255, 0.94);
+  backdrop-filter: blur(10px);
+}
+
+.header-inner,
+.footer-inner {
+  display: flex;
+  width: min(calc(100% - 40px), var(--max-width));
+  margin: 0 auto;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.header-inner {
+  min-height: 72px;
+}
+
+.site-name {
+  color: var(--ink);
+  font-size: 1rem;
+  font-weight: 750;
+  letter-spacing: -0.01em;
+  text-decoration: none;
+}
+
+nav {
+  display: flex;
+  gap: 30px;
+  align-items: center;
+  font-size: 0.94rem;
+}
+
+nav a {
+  color: var(--muted);
+  text-decoration: none;
+}
+
+nav a[aria-current="page"] {
+  color: var(--ink);
+  font-weight: 700;
+  text-decoration: underline;
+  text-decoration-color: var(--accent);
+  text-decoration-thickness: 2px;
+  text-underline-offset: 0.45em;
+}
+
+.nav-pending {
+  color: #9a969c;
+  cursor: not-allowed;
+}
+
+.page-shell {
+  display: grid;
+  grid-template-columns: 240px minmax(0, 1fr);
+  gap: 72px;
+  width: min(calc(100% - 40px), var(--max-width));
+  margin: 0 auto;
+  padding: 84px 0 112px;
+}
+
+.profile {
+  position: sticky;
+  top: 116px;
+  align-self: start;
+}
+
+.headshot {
+  display: block;
+  width: 164px;
+  height: 164px;
+  margin-bottom: 26px;
+  border: 1px solid var(--line);
+  border-radius: 50%;
+  object-fit: cover;
+  filter: saturate(0.9);
+}
+
+.profile h1 {
+  margin: 0 0 8px;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 1.75rem;
+  line-height: 1.08;
+  letter-spacing: -0.025em;
+}
+
+.role,
+.institution {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.96rem;
+  line-height: 1.5;
+}
+
+.profile-email {
+  margin: 6px 0 0;
+  font-size: 0.92rem;
+}
+
+.profile-links {
+  display: flex;
+  gap: 18px;
+  margin: 24px 0 0;
+  padding: 20px 0 0;
+  border-top: 1px solid var(--line);
+  list-style: none;
+  font-size: 0.92rem;
+}
+
+.content {
+  max-width: 760px;
+}
+
+section {
+  scroll-margin-top: 112px;
+}
+
+section + section {
+  margin-top: 88px;
+}
+
+.eyebrow {
+  margin: 0 0 10px;
+  color: var(--accent);
+  font-size: 0.74rem;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+h2 {
+  margin: 0;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(2rem, 4vw, 3.25rem);
+  font-weight: 500;
+  line-height: 1.12;
+  letter-spacing: -0.035em;
+}
+
+.intro > p:not(.eyebrow) {
+  max-width: 680px;
+  margin: 25px 0 0;
+  color: #454247;
+  font-size: 1.08rem;
+}
+
+.section-heading {
+  margin-bottom: 5px;
+  padding-bottom: 25px;
+  border-bottom: 1px solid var(--line);
+}
+
+.section-heading h2 {
+  font-size: clamp(1.8rem, 3vw, 2.4rem);
+}
+
+.paper {
+  padding: 32px 0 34px;
+  border-bottom: 1px solid var(--line);
+}
+
+.paper h3 {
+  max-width: 700px;
+  margin: 0 0 9px;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 1.38rem;
+  font-weight: 600;
+  line-height: 1.35;
+  letter-spacing: -0.015em;
+}
+
+.teaching-item {
+  padding: 32px 0 34px;
+  border-bottom: 1px solid var(--line);
+}
+
+.teaching-item h3 {
+  margin: 0 0 8px;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 1.38rem;
+  font-weight: 600;
+  line-height: 1.35;
+  letter-spacing: -0.015em;
+}
+
+.teaching-role,
+.instructors {
+  margin: 4px 0;
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+.teaching-role {
+  color: var(--ink);
+  font-weight: 700;
+}
+
+.authors,
+.status {
+  margin: 4px 0;
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+.status {
+  font-style: italic;
+}
+
+.paper-links {
+  display: flex;
+  gap: 15px;
+  margin-top: 16px;
+  font-size: 0.9rem;
+  font-weight: 700;
+}
+
+.conference-list,
+.media-coverage {
+  margin: 17px 0 0;
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+.conference-list span,
+.media-coverage span {
+  color: var(--ink);
+  font-weight: 700;
+}
+
+footer {
+  border-top: 1px solid var(--line);
+}
+
+.footer-inner {
+  min-height: 92px;
+  color: var(--muted);
+  font-size: 0.82rem;
+}
+
+@media (max-width: 780px) {
+  .header-inner,
+  .footer-inner,
+  .page-shell {
+    width: min(calc(100% - 32px), var(--max-width));
+  }
+
+  .header-inner {
+    min-height: 64px;
+  }
+
+  nav {
+    gap: 18px;
+    font-size: 0.85rem;
+  }
+
+  .page-shell {
+    display: block;
+    padding: 48px 0 80px;
+  }
+
+  .profile {
+    position: static;
+    display: grid;
+    grid-template-columns: 112px minmax(0, 1fr);
+    column-gap: 22px;
+    margin-bottom: 62px;
+    align-items: center;
+  }
+
+  .headshot {
+    grid-row: 1 / span 4;
+    width: 112px;
+    height: 112px;
+    margin: 0;
+  }
+
+  .profile-links {
+    gap: 16px;
+    margin-top: 13px;
+    padding-top: 11px;
+  }
+
+  section + section {
+    margin-top: 70px;
+  }
+
+  .footer-inner {
+    display: block;
+    padding: 24px 0;
+  }
+
+  .footer-inner p {
+    margin: 3px 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .header-inner {
+    flex-wrap: wrap;
+    gap: 7px;
+    padding: 11px 0 9px;
+  }
+
+  .site-name,
+  nav {
+    width: 100%;
+  }
+
+  nav {
+    justify-content: space-between;
+    gap: 10px;
+  }
+
+  nav a,
+  .nav-pending {
+    font-size: 0.78rem;
+  }
+
+  .profile {
+    grid-template-columns: 88px minmax(0, 1fr);
+    column-gap: 18px;
+  }
+
+  .headshot {
+    width: 88px;
+    height: 88px;
+  }
+
+  .profile h1 {
+    font-size: 1.45rem;
+  }
+
+  .role,
+  .institution,
+  .profile-email,
+  .profile-links {
+    font-size: 0.82rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
